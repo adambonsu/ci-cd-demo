@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import Home from "./src/app/page";
 import "@testing-library/jest-dom";
 
-jest.mock("../src/utils/flagsmith", () => {
+jest.mock("./src/utils/flagsmith", () => {
   return {
     getEnvironmentFlags: jest.fn(() =>
       Promise.resolve({
