@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     env:
-        FLAGSMITH_KEY: ${{ secrets.FLAGSMITH_KEY }}
+      FLAGSMITH_KEY: ${{ secrets.FLAGSMITH_KEY }}
     steps:
       - name: check secret
         run: echo ${{ secrets.FLAGSMITH_KEY }}
