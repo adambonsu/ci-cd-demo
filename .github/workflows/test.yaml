@@ -5,7 +5,13 @@ jobs:
   test-and-build:
     runs-on: ubuntu-latest
     environment: staging
+    env:
+        FLAGSMITH_KEY: ${{ secrets.FLAGSMITH_KEY }}
     steps:
+      - name: check secret
+        run: echo ${{ secrets.FLAGSMITH_KEY }}
+      - name: check environment variables
+        run: echo ${{ env.FLAGSMITH_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node Environment
